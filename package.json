@@ -1,0 +1,11 @@
+{
+  "name": "fetch-jaz-dex",
+  "description": "Fetch Jaz Dex data.",
+  "version": "1.0.0",
+  "author": "Jaz Singh",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.585.0",
+    "node-fetch": "^2.6.0"
+  }
+}

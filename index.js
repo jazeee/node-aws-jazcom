@@ -1,5 +1,22 @@
 const { urls } = require('./urls');
 const fetch = require('node-fetch');
+const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
+
+const getKey = async () => {
+  return new Promise((resolve, reject) => {
+    const ssm = new AWS.SSM();
+    ssm.getParameter({
+      Name: 'JazComKey',
+      WithDecryption: true,
+    }, (err, data) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve(data);
+    })
+  })
+}
 
 exports.handler = async (event) => {
   let authKey = null;
@@ -34,6 +51,6 @@ exports.handler = async (event) => {
   }
   const readings = await postResult.json();
   const [firstReading] = readings;
-  return firstReading;
+  const key = ""; //await getKey();
+  return { firstReading, key: key[0], len: key.length };
 };
-

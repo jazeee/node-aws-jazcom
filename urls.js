@@ -1,6 +1,6 @@
 const urls = {
   "auth": {
-    "url": "https://share1.dexcom.com/ShareWebServices/Services/General/LoginPublisherAccountByName",
+    "url": "https://share2.dexcom.com/ShareWebServices/Services/General/LoginPublisherAccountByName",
     "method": "POST",
     "headers": {
       "Accept": "application/json",
@@ -12,7 +12,7 @@ const urls = {
     }
   },
   "data": {
-    "url": "https://share1.dexcom.com/ShareWebServices/Services/Publisher/ReadPublisherLatestGlucoseValues",
+    "url": "https://share2.dexcom.com/ShareWebServices/Services/Publisher/ReadPublisherLatestGlucoseValues",
     "method": "POST",
     "headers": {
       "Accept": "application/json",
